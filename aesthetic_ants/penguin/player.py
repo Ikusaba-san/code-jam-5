@@ -2,11 +2,12 @@ from math import degrees
 
 import pyglet.window.key as key
 
+from .collision import ColliderMixin
 from .object import PhysicalObject
 from .utils import angle_between, loader, keys
 
 
-class Player(PhysicalObject):
+class Player(ColliderMixin, PhysicalObject):
     speed = 90
 
     def __init__(self, x, y):
