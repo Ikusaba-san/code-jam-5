@@ -5,7 +5,7 @@ from .utils import vector_from_angle
 
 
 class Weapon:
-    projectile_speed = 30
+    projectile_speed = 600
 
     @staticmethod
     def convert_angle(angle):
