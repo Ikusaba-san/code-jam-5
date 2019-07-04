@@ -1,9 +1,11 @@
 import pyglet
 
+from .constants import CollisionType
 from .object import PhysicalObject
 
 
 class Snowball(PhysicalObject):
+    collision_type = CollisionType.SNOWBALL
     image_file = 'snowball.png'
 
     def __init__(self, x, y, velocity_x, velocity_y, image=None):
