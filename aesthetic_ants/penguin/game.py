@@ -6,6 +6,7 @@ from .player import Player
 from .snowball import Snowball
 from .space import Space
 from .spawner import Spawner
+from .tile_layer import TileLayer
 from .utils import keys
 
 
@@ -25,6 +26,9 @@ class Game(pyglet.window.Window):
         self.spawner = Spawner()
         self.spawner.add_spawn_point(0, 0)
         self.space.add(self.spawner)
+
+        self.tiles = TileLayer(self.width, self.height)
+        self.space.add(self.tiles)
 
         # Add handlers
         self.push_handlers(self.player)
