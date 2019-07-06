@@ -27,6 +27,7 @@ class Game(pyglet.window.Window):
         self.spawner.add_spawn_point(0, 0)
         self.space.add(self.spawner)
 
+        # Create background layer
         self.tiles = TileLayer(self.width, self.height)
         self.space.add(self.tiles)
 
@@ -66,6 +67,7 @@ class Game(pyglet.window.Window):
 
     def on_draw(self):
         self.clear()
+        self.tiles.draw()
         self.space.draw()
         self.ui_space.draw()
 
