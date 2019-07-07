@@ -22,10 +22,12 @@ class Player(PhysicalObject):
     water_tiles = 0
     previous_coordinates = None
 
-    def __init__(self, x, y):
+    def __init__(self, game, x, y):
         super().__init__(PLAYER_IMAGE, x=x, y=y)
         self.original_width = PLAYER_IMAGE.width
         self.original_height = PLAYER_IMAGE.height
+
+        self.game = game
 
         self.weapon = Weapon()
 
@@ -43,7 +45,7 @@ class Player(PhysicalObject):
             self.update_size()
 
         if self.falling > FALL_MAX:
-            self.game_over(fell=True)
+            self.game.game_over(fell=True)
 
         self.water_tiles = 0
 
