@@ -19,7 +19,7 @@ class Game(pyglet.window.Window):
         self.is_over = False
         self.fps = fps
 
-        self.player = Player(self.width / 2, self.height / 2)
+        self.player = Player(self, self.width / 2, self.height / 2)
         self.player.game_over = self.game_over
 
         self.space = self.create_space()
